@@ -55,13 +55,6 @@ int main()
     cout << '\n' ;
     SetConsoleTextAttribute(color,5) ;
     cout << "────────────────────────────────────────────────── ❝ ";
-
-
-
-
-
-
-
     SetConsoleTextAttribute(color,15) ;
     cout << bold_on << " Are you Ready ?  " << bold_off ;
     SetConsoleTextAttribute(color,5) ;
