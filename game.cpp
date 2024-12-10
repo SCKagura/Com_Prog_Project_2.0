@@ -74,7 +74,7 @@ int main()
     SetConsoleTextAttribute(color,5) ;
     cout << "«───────────────────────────────────────────────────── « ⋅ʚ♡ɞ⋅ » ─────────────────────────────────────────────────────»" << endl ;
     SetConsoleTextAttribute(color,15) ;
-    cout << "Umm... I choose " ;
+    cout << "Umm... I choose : " ;
     cin >> choice ;
     cin.ignore() ;
     if (choice == "1" )
@@ -82,12 +82,12 @@ int main()
 
         cout << "Please Enter Your Username : " ;
         cin >> username ; 
-        usernamefile =("C:\\Users\\boss\\Com_Prog_Project_2.0\\Usernameinfo\\"+username+".txt") ;
+        usernamefile =("Usernameinfo\\"+username+".txt") ;
         ofstream saveusername ;
         saveusername.open(usernamefile) ;
         saveusername <<username << endl ;
         saveusername.close() ;
-        saveusername.open("C:\\Users\\boss\\Com_Prog_Project_2.0\\MaxscoreFile\\"+username+".txt", ios_base::out);
+        saveusername.open("MaxscoreFile\\"+username+".txt", ios_base::out);
         saveusername << "0" << endl ;
         cout << "Register SuccessFul" ;
         saveusername.close() ;
@@ -97,7 +97,7 @@ int main()
     {
         cout << "Please Enter Your Username : " ;
         getline (cin,username) ; 
-        usernamefile =("C:\\Users\\boss\\Com_Prog_Project_2.0\\Usernameinfo\\"+username+".txt") ;
+        usernamefile =("Usernameinfo\\"+username+".txt") ;
         ifstream pullusername ;
         pullusername.open(usernamefile) ;
         string textline ;
@@ -165,7 +165,7 @@ void display()
     SetConsoleTextAttribute(color,11) ;
     cout << "╭────────────────╮          ╭────────────────────╮          ╭───────────────────╮" << endl ;
     SetConsoleTextAttribute(color,15) ;
-    cout << " Question NO: " << Q_NO << "              Correct Answers: "<< CORRECT <<"              Wrong Answers: " << WRONG <<endl ;
+    cout << " Question NO: " << Q_NO-1 << "             Correct Answers: "<< CORRECT <<"              Wrong Answers: " << WRONG <<endl ;
     SetConsoleTextAttribute(color,11) ;
     cout << "╰────────────────╯          ╰────────────────────╯          ╰───────────────────╯" << endl ;
     cout << '\n' ;
@@ -604,7 +604,7 @@ void Gameresult ()   //folk
 void Resultfile()   //คนลาบๆ
 {
      ifstream readMaxScoreFile ;
-        readMaxScoreFile.open("C:\\Users\\boss\\Com_Prog_Project_2.0\\MaxscoreFile\\"+username+".txt") ;
+        readMaxScoreFile.open("MaxscoreFile\\"+username+".txt") ;
         string textline ;
         int current ,x ;
         getline(readMaxScoreFile,textline) ;
@@ -635,10 +635,10 @@ void Resultfile()   //คนลาบๆ
     result.close() ;
 
 
-    result.open("C:\\Users\\boss\\Com_Prog_Project_2.0\\MaxscoreFile\\"+username+".txt") ; 
+    result.open("MaxscoreFile\\"+username+".txt") ; 
     result << x ;    //show max score to max score file 
     result.close() ;
-    result.open("C:\\Users\\boss\\Com_Prog_Project_2.0\\Progress_all_people\\PROGRESS.txt",ios::app) ;
+    result.open("Progress_all_people\\PROGRESS.txt",ios::app) ;
     result << CORRECT <<" " << username << endl  ;
     result.close() ;
     Gameresult() ;
@@ -667,7 +667,7 @@ void question (string question , string a ,string b ,string c ,string d , char c
     char answer;
     SetConsoleTextAttribute(color,6) ;
     cout << "Answer = " ;
-    SetConsoleTextAttribute(color,15) ;
+    // SetConsoleTextAttribute(color,15) ;
     cin >> answer;
     answer = tolower(answer) ;
     if(answer == correct_answer)
@@ -683,7 +683,7 @@ void Scoreboard()   //แสดง scoreboard
    {
     system("cls") ;
     ifstream Scoreboardfile ;
-    Scoreboardfile.open("C:\\Users\\boss\\Com_Prog_Project_2.0\\Progress_all_people\\PROGRESS.txt") ;
+    Scoreboardfile.open("Progress_all_people\\PROGRESS.txt") ;
     string copytextline ; 
     int q= 0 ;
     while (getline(Scoreboardfile,copytextline))
@@ -697,13 +697,13 @@ void Scoreboard()   //แสดง scoreboard
  //   for (int i = 0 ; i < 5 ;i++) cout << x[i] << endl;
    
   
-    Scoreboardfile.open("C:\\Users\\boss\\Com_Prog_Project_2.0\\Progress_all_people\\PROGRESS.txt") ;
+    Scoreboardfile.open("Progress_all_people\\PROGRESS.txt") ;
     int r = 0,u ;
     SetConsoleTextAttribute(color,2) ;
     cout << "«───────────────────────────────────────────────────── « .⋅ εïз ⋅. » ─────────────────────────────────────────────────────»" << endl ;
     for (int i = 0 ;i<5 ; i++)
     {
-    Scoreboardfile.open("C:\\Users\\boss\\Com_Prog_Project_2.0\\Progress_all_people\\PROGRESS.txt") ;
+    Scoreboardfile.open("Progress_all_people\\PROGRESS.txt") ;
      SetConsoleTextAttribute(color,2) ;
     
         while (getline(Scoreboardfile,copytextline))

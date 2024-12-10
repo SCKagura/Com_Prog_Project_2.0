@@ -1,17 +1,4 @@
-    {
-                SetConsoleTextAttribute(color,rand()%16) ;
-                cout <<"                                                        " << copytextline << endl  ;
-                 r++ ;
-             }
-            }
-           
-        } //ทำเสร็จสักที วู้ว
-    Scoreboardfile.close() ;
+    for(int j = 0 ; j< 100 ; j++ )
+   {
+       cout <<meaning[j] << endl  ;
     }
-    SetConsoleTextAttribute(color,2) ;
-    cout << "«───────────────────────────────────────────────────── « .⋅ εïз ⋅. » ─────────────────────────────────────────────────────»" << endl ;
-    cout <<"Press Enter to go home" ;
-    cin.get() ;
-    main() ;
-}
-}
